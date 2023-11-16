@@ -43,13 +43,6 @@ function ask(question, yes, no) {
     else no();
 }
 
-ask(
-    "Do you agree?",
-    function() {alert("You agreed")}; 
-    function() {alert("You canceled the execution"); }
-);
-
-
 
 // Function declarations are only visible inside the code block in
 // which it resides
@@ -78,7 +71,7 @@ welcome(); // Error: welcome is not defined
 // To fix this we can use a function expression and assign welcome
 // to the variable that is declared outside of if and has proper visibility
 
-let age = prompt("What is your age", 18)
+let age5 = prompt("What is your age", 18)
 
 let welcome;
 
@@ -97,7 +90,7 @@ welcome(); // ok now
 
 // Or we could simplify it even further using a question mark operator
 
-let age = prompt("What is your age?", 18);
+let age4 = prompt("What is your age?", 18);
 
 let welcome = (age < 18) ?
     function() { alert("Hello!") } :
@@ -112,7 +105,7 @@ welcome(); // ok now
 
 // another alternative to function definitions and func expressions
 
-let func = (arg1, arg2, ..., argN) => expression;
+let func = (arg1, arg2, argN) => expression;
 
 // This creates function func that accepts arguments arg1...argN,
 // then evaluates the expression on the right side with their use 
@@ -120,7 +113,7 @@ let func = (arg1, arg2, ..., argN) => expression;
 
 // It's a shorter version of:
 
-let func = function(arg1, arg2, ..., argN) {
+let func2 = function(arg1, arg2, argN) {
     return expression;
 };
 
@@ -131,7 +124,7 @@ let sum = (a, b) => a + b;
 
 // that is a shorter form of
 
-let sum = function(a,b) {
+let sum3 = function(a,b) {
     return a + b;
 };
 
@@ -147,10 +140,10 @@ let sayHI = () => alert("Hello!");
 // Arrow functions can be used the same way as Function Expressions
 // For instance to dynamically create a function
 
-let age = prompt("What is your age?", 18);
+let age2 = prompt("What is your age?", 18);
 
 let welcome = (age < 18) ? 
-    () => alert("Hello");
+    () => alert("Hello"):
     () => alert("Greetings!");
 
 welcome();
@@ -158,7 +151,7 @@ welcome();
 
 // MULTILINE ARROW FUNCTIONS
 
-let sum = (a,b) => {
+let sum2 = (a,b) => {
     let result = a + b;
     return result; // if we use curly braces, then we need an explicit return
 };
@@ -171,13 +164,11 @@ alert ( sum(1,2) ); // 3
 
 // rewrite with arrow functions
 
-let ask = (question, yes, no) {
-    if (confirm(question)) yes();
-    else no();
-}
+
+
 
 ask(
     "Do you agree?",
     () => alert("You agreed."),
-    () => alert("You canceled the execution.");\
+    () => alert("You canceled the execution.")
 );
