@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest List</title>
+</head>
+<body>
+    <h2>Live output</h2>
+    <div class="output" style="height: 100px;overflow: auto;">
+    <p class="admitted">Admit:</p>
+    <p class="refused">Refuse:</p>
+    </div>
+
+    <h2>Editable code</h2>
+    <p class="a11y-label">
+    Press Esc to move focus away from the code area (Tab inserts a tab character).
+    </p>
+    <textarea id="code" class="playable-code" style="height: 400px;width: 95%">
+    const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+
+    const admitted = document.querySelector('.admitted');
+    const refused = document.querySelector('.refused');
+    admitted.textContent = 'Admit: ';
+    refused.textContent = 'Refuse: ';
+
+    // loop starts here
+
+    // refused.textContent += ;
+    // admitted.textContent += ;
+
+    </textarea>
+
+    <div class="playable-buttons">
+    <input id="reset" type="button" value="Reset" />
+    <input id="solution" type="button" value="Show solution" />
+    </div>
+    <script src="gl.js"></script>
+</body>
+</html>
