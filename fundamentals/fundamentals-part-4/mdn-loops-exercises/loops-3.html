@@ -41,7 +41,17 @@
 
 
     // Add your code here
-
+    for (i; i > 1; i--) {
+        if (isPrime(i)) {
+            if (i === 2) {
+                const node = document.createTextNode(`${i}.`);
+                para.appendChild(node);
+                break;
+            }
+            const node = document.createTextNode(`${i}, `);
+            para.appendChild(node);
+        }
+    }
 
     // Don't edit the code below here!
     const section = document.querySelector('section');

@@ -41,6 +41,15 @@
     ]
 
     // Add your code here
+    let i = 0;
+    while(i < phonebook.length) {
+        if (name === phonebook[i]["name"]) {
+            const node = document.createTextNode(`${phonebook[i]["name"]} ${phonebook[i]["number"]}`);
+            para.appendChild(node);
+            break;
+        }
+        i++;
+    }
 
     // Don't edit the code below here!
     const section = document.querySelector('section');
@@ -48,3 +57,5 @@
   </script>
 
 </html>
+
+
