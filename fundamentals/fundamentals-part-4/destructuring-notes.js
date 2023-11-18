@@ -88,85 +88,85 @@
 // // second = Lydia
 
 
-//// IGNORING SOME VALUES
+// //// IGNORING SOME VALUES
 
-// Destructuring lets you map a variable to the elements you are 
-// interested in. You can ignore or skip the other elements in the
-// array by using trailing commas
+// // Destructuring lets you map a variable to the elements you are 
+// // interested in. You can ignore or skip the other elements in the
+// // array by using trailing commas
 
-let a, b;
-[a, , b] = ["Lordy", "Crown", "Roses"];
+// let a, b;
+// [a, , b] = ["Lordy", "Crown", "Roses"];
 
-console.log(a); // Output: Lordy
-console.log(b); // Output: Roses
-
-
-//// The rest parameter and spread syntax
-
-// The new (...) operator that was added in ES6 can be used in 
-// destructuring. If the (...) operator appears on the left-hand
-// side in destructuring than it is a REST PARAMETER. A rest parameter
-// is used to map all the remaining elements in the array that have
-// not been mapped to the rest variable itself.
-
-// It's like gathering what's left behind. The rest variable must
-// always be the last otherwise SyntaxError is thrown
-
-const planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
-const [first, , third, ...others] = planets;
-
-console.log(first); // Output: Mercury
-console.log(third); // Output: Earth
-console.log(others); // Output: ["Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
-
-// If the (...) operator appears on the right-hand side in destructuring
-// then it is a SPREAD SYNTAX. It takes all the other elements in the
-// array which have no variable mapped to them and maps it to the 
-// rest variable
-
-const otherPlanets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
-const [first, second, ...rest] = ["Mercury", "Venus", ...otherPlanets];
-
-console.log(first); // Output: Mercury
-console.log(second); // Output: Venus
-console.log(rest); // Output: ["Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
-
-// When you have more variables on the left-hand side, it maps the 
-// single elements in the array equally to the variables
+// console.log(a); // Output: Lordy
+// console.log(b); // Output: Roses
 
 
+// //// The rest parameter and spread syntax
 
-// One destructuring expression can be used in swapping the values of 
-// two variables
+// // The new (...) operator that was added in ES6 can be used in 
+// // destructuring. If the (...) operator appears on the left-hand
+// // side in destructuring than it is a REST PARAMETER. A rest parameter
+// // is used to map all the remaining elements in the array that have
+// // not been mapped to the rest variable itself.
 
-let a, b;
-[a, b] = ["Male", "Female"];
-[a, b] = [b, a];
+// // It's like gathering what's left behind. The rest variable must
+// // always be the last otherwise SyntaxError is thrown
 
-console.log(a); // Output: Female
-console.log(b); // Output: Male
+// const planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
+// const [first, , third, ...others] = planets;
+
+// console.log(first); // Output: Mercury
+// console.log(third); // Output: Earth
+// console.log(others); // Output: ["Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+
+// // If the (...) operator appears on the right-hand side in destructuring
+// // then it is a SPREAD SYNTAX. It takes all the other elements in the
+// // array which have no variable mapped to them and maps it to the 
+// // rest variable
+
+// const otherPlanets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
+// const [first, second, ...rest] = ["Mercury", "Venus", ...otherPlanets];
+
+// console.log(first); // Output: Mercury
+// console.log(second); // Output: Venus
+// console.log(rest); // Output: ["Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+
+// // When you have more variables on the left-hand side, it maps the 
+// // single elements in the array equally to the variables
 
 
-// Nested array destructuring
 
-// You can also do nested destructuring with arrays. The corresponding
-// item must be an array in order to use a nested destructuring array
-// literal to assign items in it to local variables
+// // One destructuring expression can be used in swapping the values of 
+// // two variables
 
-const numbers = [8, [1, 2, 3], 10, 12];
-const [a, [d, e, f]] = numbers;
+// let a, b;
+// [a, b] = ["Male", "Female"];
+// [a, b] = [b, a];
 
-console.log(a); // Output: 8
-console.log(d); // Output: 1
+// console.log(a); // Output: Female
+// console.log(b); // Output: Male
 
 
-// Multiple array destructuring
-// You can do it more than once in the same code snippet
+// // Nested array destructuring
 
-const places = ["first", "second", "third", "fourth"];
-const [a, b, , d] = [f, ...rest] = places;
+// // You can also do nested destructuring with arrays. The corresponding
+// // item must be an array in order to use a nested destructuring array
+// // literal to assign items in it to local variables
 
-console.log(a); // Output: first
-console.log(d); // Output: fourth
-console.log(f); // Output: first
-console.log(rest); // Output: ["second", "third", "fourth"]
+// const numbers = [8, [1, 2, 3], 10, 12];
+// const [a, [d, e, f]] = numbers;
+
+// console.log(a); // Output: 8
+// console.log(d); // Output: 1
+
+
+// // Multiple array destructuring
+// // You can do it more than once in the same code snippet
+
+// const places = ["first", "second", "third", "fourth"];
+// const [a, b, , d] = [f, ...rest] = places;
+
+// console.log(a); // Output: first
+// console.log(d); // Output: fourth
+// console.log(f); // Output: first
+// console.log(rest); // Output: ["second", "third", "fourth"]
