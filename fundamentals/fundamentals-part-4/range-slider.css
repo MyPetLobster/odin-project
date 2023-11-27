@@ -1,0 +1,63 @@
+body {
+    background-color: bisque;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 15rem;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #053a5f;
+    height: 16px;
+    border-radius: 10px;
+}
+input[type="range"]::-moz-range-track  {
+    background: #053a5f;
+    height: 16px;
+    border-radius: 10px;
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+ 
+    background-color: aqua;
+    /* margin-top = (track height / 2) - (thumb height / 2) */
+    height: 12px;
+    width: 12px;
+    margin-top: 2px;
+}
+input[type="range"]::-moz-range-thumb {
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 0; /*Removes default border-radius that FF applies*/
+    background-color: #5cd5eb;
+    height: 12px;
+    width: 12px;
+}
+
+
+/* FOCUS STYLES */
+
+/* Remove default focus */
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+/* Chrome Safari Opera and Edge Chromium */
+input[type="range"]:focus::-webkit-slider-thumb {
+    border: 1px solid #053a5f;
+    outline: 3px solid #053a5f;
+    outline-offset: 0.125rem;
+}
+
+/* Firefox */
+
+input[type="range"]:focus::-moz-range-thumb {
+    border: 1px solid #053a5f;
+    outline: 3px solid #053a5f;
+    outline-offset: 0.125rem;
+}
