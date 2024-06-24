@@ -36,4 +36,5 @@ caption {
 
 .name {
   font-weight: bold;
+  background-color: #ebebeb !important;
 }
