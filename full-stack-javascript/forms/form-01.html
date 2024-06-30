@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>My test page</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        form {
+            display: inline-block;
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 1em;
+            box-shadow: 0 0 10px rgb(0 0 0 / 0.1)
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        form li + li {
+            /* Add space between list items except for the first one */
+            margin-top: 1em;
+        }
+        label {
+            display: inline-block;
+            width: 60px;
+            text-align: right;
+        }
+        input, 
+        textarea {
+            font: 1em sans-serif;
+            width: 300px;
+            box-sizing: border-box;
+            border: 1px solid #999;
+        }
+        input:focus,
+        textarea:focus {
+            border-color: #000;
+        }
+        textarea {
+            vertical-align: top;
+            height: 5em;
+        }
+        .button {
+            padding-left: 60px;
+        }
+        button {
+            margin-left: .5em;
+        }
+
+    </style>
+  </head>
+
+  <body>
+    <p>This is my page</p>
+
+    <!-- Contact Form  -->
+    <form action="/my_handling_form_page" method="post">
+        <ul>
+            <li>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="user_name">
+            </li>
+            <li>
+                <label for="email">Email:</label>
+                <input type="email" id="mail" name="user_email">
+            </li>
+            <li>
+                <label for="message">Message:</label>
+                <textarea id="message" name="user_message"></textarea>
+            </li>
+            <li class="button">
+                <button type="submit">Send Your Message</button>
+            </li>
+        </ul>
+    </form>
+  </body>
+</html>
