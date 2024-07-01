@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Controls</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5em;
+            justify-content: center;
+            font: 1em sans-serif;
+            color: rgb(18, 33, 12);
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        ul > li + li {
+            margin-top: 1em;
+        }
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        form {
+            display: inline-block;
+            width: 50%;
+            padding: 1em;
+            border: 1px solid rgb(18, 33, 12);
+            border-radius: 1em;
+        }
+        legend {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+        }
+        input {
+            font: 1em sans-serif;
+            width: 300px;
+            box-sizing: border-box;
+            border: 1px solid rgb(18, 33, 12);
+        }
+
+        button {
+            margin-left: 0.5em;
+            padding: 0.5em 1em;
+            font: 1em sans-serif;
+            background-color: rgb(42, 69, 32);
+            color: white;
+            border: none;
+            border-radius: 0.5em;
+            cursor: pointer;
+        }
+        button:hover, 
+        button:focus {
+            background-color: rgb(18, 33, 12);
+        }
+
+        #pony-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            align-items: center;
+        }
+        #pony-fieldset,
+        #hotdog-fieldset {
+            border: 1px solid rgb(18, 33, 12);
+            border-radius: 1em;
+            padding: 1em;
+            width: 40%;
+        }
+        #pony-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            align-items: flex-start;
+            text-align: right;
+        }
+        #pony-list > li {
+            display: flex;
+            gap: 1em;
+            align-items: center;
+        }
+        #pony-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 !important;
+        }
+        #pony-list input {
+            width: 1em;
+        }
+        input[type="radio"]:checked {
+            accent-color: rgb(18, 33, 12);
+        }
+
+        #file-form label {
+            font-size: 1.1em;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+        }
+        #file-form input {
+            display: block;
+            margin: 1em auto;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <h2>Basic Controls 01</h2>
+        <ul>
+            <li>
+                <label for="user_id">
+                    <strong><span aria-label="required">*</span></strong>User ID:
+                </label>
+                <input type="text" id="user_id" name="user_id">
+            </li>
+            <li>
+                <label for="password">
+                    <strong><span aria-label="required">*</span></strong>
+                    Password:
+                </label> 
+                <input type="password" id="password" name="password">
+            </li>
+            <li>
+                <button type="submit">Login</button>
+            </li>
+        </ul>
+    </form>
+
+    
+    <form action="" id="pony-form">
+        <h2>Basic Controls 02</h2>
+        <fieldset id="pony-fieldset">
+            <legend>Who is your favorite pony?</legend>
+            <ul id="pony-list">
+                <li><label for="pinkie">Pinkie Pie</label><input type="radio" name="pony" id="pinkie" checked></li>
+                <li><label for="rainbow">Rainbow Dash</label><input type="radio" name="pony" id="rainbow"></li>
+                <li><label for="twilight">Twilight Sparkle</label><input type="radio" name="pony" id="twilight"></li>
+            </ul>
+        </fieldset>
+
+        <fieldset id="hotdog-fieldset">
+            <legend>Hotdog preferences</legend>
+            <ul>
+                <li><label for="vegan">Vegan</label><input type="checkbox" name="hotdog" id="vegan"></li>
+                <li><label for="onions">Onions</label><input type="checkbox" name="hotdog" id="onions"></li>
+                <li><label for="mustard">Mustard</label><input type="checkbox" name="hotdog" id="mustard"></li>
+                <li><label for="ketchup">Ketchup</label><input type="checkbox" name="hotdog" id="ketchup"></li>
+                <li><label for="all">The Works</label><input type="checkbox" name="hotdog" id="all"></li>
+            </ul>
+        </fieldset>
+        <div style="width: 100%; text-align: center;">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <form id="file-form">
+        <ul>
+            <li>
+                <label for="gallery-img">Choose gallery images to upload</label>
+                <input type="file" id="gallery-img" name="gallery-img" type="image/*" multiple>
+            </li>
+        </ul>
+        <div style="width: 100%; text-align: center;">
+            <button type="submit">Upload</button>
+        </div>
+    </form>
+<script>
+    const hotdogAll = document.getElementById('all');
+    const hotdogCheckboxes = document.querySelectorAll('[name="hotdog"]:not(#all)');
+
+    hotdogAll.addEventListener('change', () => {
+        hotdogCheckboxes.forEach(checkbox => {
+            checkbox.checked = hotdogAll.checked;
+        });
+    });
+
+    hotdogCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            hotdogAll.checked = Array.from(hotdogCheckboxes).every(checkbox => checkbox.checked);
+        });
+    });
+
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            button.style.transition = '250ms';
+            button.style.transform = 'scale(0.9)';
+        });
+        button.addEventListener('mouseup', () => {
+            button.style.transform = 'scale(1)';
+        });
+    });
+</script>
+</body>
+</html>
