@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Controls</title>
+</head>
+<body>
+    <h1>Other Controls 1</h1>
+    <form>
+        <h2>Enter your comment</h2>
+        <ul>
+            <li>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </li>
+            <li>
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="10" cols="35" maxlength="100"></textarea>
+            </li>
+            <li>
+                <button>Submit</button>
+            </li>
+        </ul>
+    </form>
+
+    </br>
+
+    <h1>Other Controls 2</h1>
+    <form>
+        <ul>
+            <li>
+            <label for="food">Pick your favorite food:</label>
+                <select id="food" name="food">
+                    <optgroup label="Main Course">
+                        <option value="salad">Salad</option>
+                        <option value="curry">Curry</option>
+                        <option value="pizza">Pizza</option>
+                        <option value="fajitas">Fajitas</option>
+                    </optgroup>
+                    <optgroup label="Snacks">
+                        <option value="biscuits">Biscuits</option>
+                        <option value="crisps">Crisps</option>
+                        <option value="fruit">Fruit</option>
+                        <option value="breadsticks">Breadsticks</option>
+                    </optgroup>
+                </select>
+            </li>
+            <li>
+                <button>Submit choice</button>
+            </li>
+        </ul>
+    </form>
+
+    </br>
+
+    <h1>Other Controls 3</h1>
+
+    <form action="#">
+        <ul>
+            <li>
+                <label for="food">Enter your favorite food:</label>
+                <input type="text" id="food" name="food" list="foodSuggestions">
+                <datalist id="foodSuggestions">
+                    <option value="Salad"></option>
+                    <option value="Curry"></option>
+                    <option value="Pizza"></option>
+                    <option value="Fajitas"></option>
+                    <option value="Biscuits"></option>
+                    <option value="Crisps"></option>
+                    <option value="Fruit"></option>
+                    <option value="Breadsticks"></option>
+                </datalist>
+            </li>
+            <li>
+                <button>Submit choice</button>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

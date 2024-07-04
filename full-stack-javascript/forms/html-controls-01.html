@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form>
+  <h2>Edit your preferences</h2>
+  <ul>
+    <li>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email">
+    </li>
+    <li>
+      <label for="website">Website</label>
+      <input type="url" id="website" name="website"
+    </li>
+    <li>
+      <label for="phone">Phone number</label>
+      <input type="tel" id="phone" name="phone">
+    </li>
+    <li>
+      <label for="fave-color">Favorite color</label>
+      <input type="color" id="fave-color" name="fave-color">
+    </li>
+    <li>
+      <button type="submit">Update preferences</button>
+    </li>
+  </ul>
+</form>
+
+</br>
+
+<form>
+  <ul>
+    <li>
+      <label for="max-invite">Select maximum number of invitations</label>
+      <input type="range" id="max-invite" name="max-invite" min="1" max="30" step="1" value="10">
+    </li>
+    <li>
+      <button type="submit">Submit</button>
+    </li>
+  </ul>
+</form>
+<p class="invite-output"></p>
+
+    <script>
+      const invite = document.querySelector('#max-invite');
+      const output = document.querySelector('.invite-output');
+
+      output.textContent = invite.value;
+
+      invite.addEventListener('input', function() {
+        output.textContent = invite.value;
+      });
+    </script>
+</body>
+</html>
