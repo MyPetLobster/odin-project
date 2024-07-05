@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Advanced styling: Task 2</title>
+        <style>
+        body {
+            background-color: #fff;
+            color: #333;
+            font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+            padding: 1em;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+            font-size: 100%;
+            padding: 0; margin: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 0.8em;
+            margin-bottom: 1.2em;
+        }
+
+        input[type="radio"] {
+            appearance: none;
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            border: 1px solid #000000;
+            background-color: rgb(219, 217, 217)
+        }
+        
+        input[type="radio"]:checked {
+            background-color: rgb(0, 0, 0);
+        }
+        </style>
+    </head>
+
+    <body>
+        <form>
+            <fieldset>
+                <legend>Who is your favorite pony?</legend>
+                <ul>
+                    <li>
+                        <label for="pinkie">Pinkie Pie</label>
+                        <input type="radio" id="pinkie" name="pony" value="pinkie">
+                    </li>
+                    <li>
+                        <label for="rainbow">Rainbow Dash</label>
+                        <input type="radio" id="rainbow" name="pony" value="rainbow">
+                    </li>
+                    <li>
+                        <label for="twilight">Twilight Sparkle</label>
+                        <input type="radio" id="twilight" name="pony" value="twilight">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </body>
+
+</html>
