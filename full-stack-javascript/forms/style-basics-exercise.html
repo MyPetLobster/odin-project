@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Preferences</title>
+    <style>
+        /* Step 1: Lightweight CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        label {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        input, select {
+            flex: 2;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .button-div {
+            margin-top: 1em;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #5cb85c;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h2>Edit your preferences</h2>
+        <ul>
+            <li>
+                <label for="e-mail">Email:</label>
+                <input type="email" id="e-mail" name="e-mail">
+            </li>
+            <li>
+                <label for="website">Website:</label>
+                <input type="url" id="website" name="website">
+            </li>
+            <li>
+                <label for="phone">Phone number:</label>
+                <input type="tel" id="phone" name="phone">
+            </li>
+            <li>
+                <label for="food">Favorite food:</label>
+                <select name="food" id="food">
+                    <option>Salad</option>
+                    <option>Curry</option>
+                    <option>Pizza</option>
+                    <option>Fajitas</option>
+                </select>
+            </li>
+            <li>
+                <div class="button-div">
+                    <button>Update preferences</button>
+                </div>
+
+            </li>
+        </ul>
+    </form>
+</body>
+</html>
